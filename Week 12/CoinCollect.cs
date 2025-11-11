@@ -1,0 +1,48 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.SocialPlatforms.Impl;
+
+public class CoinCollect : MonoBehaviour
+{
+    public GameObject CoinPrefab;
+
+    //random places for coin to spawn
+    public float minX = -1f;
+    public float maxX = 6f;
+    public float minY = 1f;
+    public float maxY = 5f;
+
+    //Starting Score
+    private int score = 0;
+
+    private void Start()
+    {
+        SpawnNewCoin(); //Need a coin at the start of the game
+    }
+   
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if(other.CompareTag("Coin"))
+        {
+            score++;
+            Debug.Log("Score: "+ score); 
+
+            //When player touches it
+            Destroy(other.gameObject);
+
+            //Spawn random coin 
+            SpawnNewCoin();
+        }
+
+    }
+    public void SpawnNewCoin()
+    {
+        float randomX = Random.Range(minX, maxX);
+        float randomY = Random.Range(minY, maxY);
+        Vector3 randomPos = new Vector3(randomX, randomY, 0f);
+        Instantiate(CoinPrefab, randomPos, Quaternion.identity);
+    }
+   
+}
