@@ -8,9 +8,9 @@ public class CoinCollect : MonoBehaviour
     public GameObject CoinPrefab;
 
     //random places for coin to spawn
-    public float minX = -1f;
+    public float minX = -3f;
     public float maxX = 6f;
-    public float minY = 1f;
+    public float minY = -3f;
     public float maxY = 5f;
 
     //Starting Score
@@ -46,3 +46,4 @@ public class CoinCollect : MonoBehaviour
     }
    
 }
+
