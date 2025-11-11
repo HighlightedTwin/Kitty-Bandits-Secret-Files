@@ -6,6 +6,9 @@ using UnityEngine.SocialPlatforms.Impl;
 public class CoinCollect : MonoBehaviour
 {
     public GameObject CoinPrefab;
+     // Toast's code
+ private GameManager gameManager;
+ // End of Toast's code
 
     //random places for coin to spawn
     public float minX = -3f;
@@ -18,6 +21,9 @@ public class CoinCollect : MonoBehaviour
 
     private void Start()
     {
+        //Toast Code
+        gameManager=GameObject.Find("GameManager").GetComponent<GameManager>();
+        //End Toast Code
         SpawnNewCoin(); //Need a coin at the start of the game
     }
    
@@ -46,4 +52,5 @@ public class CoinCollect : MonoBehaviour
     }
    
 }
+
 
