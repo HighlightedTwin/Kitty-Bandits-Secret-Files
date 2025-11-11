@@ -35,6 +35,10 @@ public class CoinCollect : MonoBehaviour
             score++;
             Debug.Log("Score: "+ score); 
 
+            // Toast's code
+            gameManager.AddScore(1);
+            // End of Toast's code
+
             //When player touches it
             Destroy(other.gameObject);
 
@@ -52,5 +56,6 @@ public class CoinCollect : MonoBehaviour
     }
    
 }
+
 
 
