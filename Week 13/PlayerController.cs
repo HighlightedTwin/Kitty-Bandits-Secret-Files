@@ -85,8 +85,8 @@ public class PlayerController : MonoBehaviour
         if(whatDidIHit.tag == "Powerup")
         {
             Destroy(whatDidIHit.gameObject);
-            int whichPowerup = 4;
-                //Random.Range(1, 5);
+            int whichPowerup = Random.Range(1, 5);
+            
             gameManager.PlaySound(1);
             switch (whichPowerup)
             {
@@ -167,3 +167,4 @@ public class PlayerController : MonoBehaviour
 
     }
 }
+
